@@ -53,7 +53,7 @@ h1.title {
   float: right;
   text-align: right; }
 
-.score-container, .best-container {
+.score-container, .best-container, .auth-button {
   position: relative;
   display: inline-block;
   background: #bbada0;
@@ -97,6 +97,60 @@ h1.title {
 
 .best-container:after {
   content: "Best"; }
+
+
+.logout-icon {
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+body.loading .loaded-content {
+  display: none;
+}
+
+.loading-stuff {
+  display: none;
+}
+
+body.loading .loading-stuff {
+  display: block;
+}
+
+body.unauthenticated .auth-buttons .logout-button {
+  display: none;
+}
+
+body.unauthenticated .auth-buttons .login-buttons {
+  display: inline;
+}
+
+body.unauthenticated .game-stuff {
+  display: none;
+}
+
+body.authenticated .auth-buttons .login-buttons {
+  display: none;
+}
+
+body.authenticated .auth-buttons .logout-button {
+  display: inline;
+}
+
+.auth-buttons {
+  text-align: center;
+  margin-top: 26px;
+}
+
+.auth-button {
+  padding: 15px;
+  display: inline;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.auth-button:hover { opacity: .8; }
+.auth-button:active { opacity: .6; }
 
 p {
   margin-top: 0;
