@@ -53,7 +53,7 @@ h1.title {
   float: right;
   text-align: right; }
 
-.score-container, .best-container, .auth-button {
+.score-container, .best-container {
   position: relative;
   display: inline-block;
   background: #bbada0;
@@ -97,38 +97,6 @@ h1.title {
 
 .best-container:after {
   content: "Best"; }
-
-.auth-buttons {
-  text-align: center;
-  margin-top: 26px;
-}
-
-.auth-buttons .logout-button {
-  display: none;
-}
-
-.auth-buttons.authenticated .logout-button {
-  display: inline;
-}
-
-.auth-buttons .login-button {
-  display: inline;
-}
-
-.auth-buttons.authenticated .login-button {
-  display: none;
-}
-
-.auth-button {
-  padding: 15px;
-  display: inline;
-  font-size: 16px;
-  cursor: pointer;
-  opacity: 1;
-}
-
-.auth-button:hover { opacity: .8; }
-.auth-button:active { opacity: .6; }
 
 p {
   margin-top: 0;

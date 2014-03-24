@@ -68,30 +68,18 @@ GameManager.prototype.addRandomTile = function () {
 
 // Sends the updated grid to the actuator
 GameManager.prototype.actuate = function () {
-  var _this = this;
-  var currentHighestScore = _this.score;
-  
-  if (_this.bestScore > _this.score) {
-    currentHighestScore = _this.bestScore;
+  if (this.scoreManager.get() < this.score) {
+    this.scoreManager.set(this.score);
   }
-  
-  _this.actuator.actuate(_this.grid, {
-    score:      _this.score,
-    over:       _this.over,
-    won:        _this.won,
-    bestScore:  currentHighestScore,
-    terminated: _this.isGameTerminated()
+
+  this.actuator.actuate(this.grid, {
+    score:      this.score,
+    over:       this.over,
+    won:        this.won,
+    bestScore:  this.scoreManager.get(),
+    terminated: this.isGameTerminated()
   });
-  
-  this.scoreManager.get(function(score) {
-    var highestScore = score;
-    if (score < _this.score) {
-      highestScore = _this.score;
-      _this.scoreManager.set(_this.score);
-    }
-    _this.bestScore = highestScore;
-    _this.actuator.updateBestScore(highestScore);
-  });
+
 };
 
 // Save all tile positions and remove merger info
