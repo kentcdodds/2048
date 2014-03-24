@@ -22,7 +22,10 @@
     } else if (user) {
       loggedInUser = user;
       setState('authenticated');
-      document.querySelector('.logout-icon').classList.add('icon-' + user.provider);
+      var logoutEl = document.querySelector('.logout-icon');
+      logoutEl.className = '';
+      logoutEl.classList.add('logout-icon');
+      logoutEl.classList.add('icon-' + user.provider);
       var bestScoreRef = ref.child('users/' + user.provider + '/' + user.id + '/bestScore');
       window.game.scoreManager = new LocalScoreManager(function getter(callback) {
         bestScoreRef.once('value', function(data) {
