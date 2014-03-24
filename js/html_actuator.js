@@ -160,7 +160,7 @@ HTMLActuator.prototype.scoreTweetButton = function () {
   tweet.setAttribute("data-counturl", "http://kent.doddsfamily.us/2048");
   tweet.textContent = "Tweet";
 
-  var text = "I scored " + this.score + " points at 2048, a game where you " +
+  var text = "I scored " + this.score + " points at 2048-auth, a game where you " +
              "join numbers to score high! #2048game";
   tweet.setAttribute("data-text", text);
 
